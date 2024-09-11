@@ -1,0 +1,80 @@
+@import '../../../styles.scss';
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url('../../../assets/body-bg.jpg');
+    background-size: cover;
+    padding-left: 120px;
+  }
+  
+  .login-box {
+    width: 350px;
+    padding: 40px;
+    background-color: #111;
+    opacity: 0.9;
+    border-radius: 10px;
+  }
+  
+  .item-logo img {
+    width: 150px;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-group input,
+  .input-group select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .input-group select {
+    appearance: none; /* Remove default dropdown arrow */
+    // background-image: url('../../../assets/arrow-down.svg'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  .error-message {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  

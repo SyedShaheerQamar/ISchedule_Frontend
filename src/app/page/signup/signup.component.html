@@ -1,0 +1,112 @@
+<div class="login-container">
+  <p-toast></p-toast>
+  <div class="login-box">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          formControlName="firstName"
+          class="form-control"
+          placeholder="Enter your first name"
+        />
+        <div
+          *ngIf="
+            signupForm.get('firstName')?.invalid &&
+            signupForm.get('firstName')?.touched
+          "
+          class="error-message"
+        >
+          First Name is required
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          formControlName="lastName"
+          class="form-control"
+          placeholder="Enter your last name"
+        />
+        <div
+          *ngIf="
+            signupForm.get('lastName')?.invalid &&
+            signupForm.get('lastName')?.touched
+          "
+          class="error-message"
+        >
+          Last Name is required
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="Enter your email"
+        />
+        <div
+          *ngIf="
+            signupForm.get('email')?.invalid && signupForm.get('email')?.touched
+          "
+          class="error-message"
+        >
+          A valid email is required
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="Enter your password"
+        />
+        <div
+          *ngIf="
+            signupForm.get('password')?.invalid &&
+            signupForm.get('password')?.touched
+          "
+          class="error-message"
+        >
+          Password is required
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="role">Select an Option</label>
+        <select id="dropdown" formControlName="role" class="form-control">
+          <option value="" disabled>Select an option</option>
+          <option *ngFor="let option of dropdownOptions" [value]="option">
+            {{ option }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            signupForm.get('role')?.invalid && signupForm.get('role')?.touched
+          "
+          class="error-message"
+        >
+          Please select an option
+        </div>
+      </div>
+      <div class="form-group forgot-password">
+        <a
+          routerLink="/login"
+          style="color: blue; margin-left: 20px"
+          class="forgot-link"
+          >Login</a
+        >
+      </div>
+      <div class="input-group text-center">
+        <button type="submit" class="login-btn" [disabled]="signupForm.invalid">
+          Sign Up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

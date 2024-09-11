@@ -1,0 +1,119 @@
+<div class="flex flex-row">
+  <app-sidebar></app-sidebar>
+  <div class="body-position">
+    <div class="body-holder">
+      <app-dashboard-head></app-dashboard-head>
+
+      <div class="main">
+        <!-- Breadcrumbs -->
+        <div class="card flex justify-content-center">
+          <p-breadcrumb class="max-w-full" [model]="items"></p-breadcrumb>
+        </div>
+
+        <!-- Form Card -->
+        <div class="body-card">
+          <p-toast></p-toast>
+          <div class="card">
+            <h1 class="mb-4 h-color">Add Pref</h1>
+            <form #categoryform="ngForm" (ngSubmit)="onSubmit()">
+              <div class="grid">
+                <div class="col-3">
+                  <div class="flex flex-column gap-2" style="margin-top: 27px">
+                    <p-dropdown
+                      #roomDropdown
+                      [options]="roomName"
+                      [(ngModel)]="selectedRoom"
+                      optionLabel="name"
+                      placeholder="Select Room"
+                      name="room"
+                    ></p-dropdown>
+                  </div>
+                </div>
+
+                <!-- Start Time Selection -->
+                <div class="col-3">
+                  <div class="flex flex-column gap-2" style="margin-top: 27px">
+                    <p-dropdown
+                      #startTimeDropdown
+                      [options]="filteredStartTime"
+                      [(ngModel)]="selectedStartTime"
+                      optionLabel="name"
+                      placeholder="Select Start Time"
+                      name="startTime"
+                      (onChange)="onStartTimeChange()"
+                    ></p-dropdown>
+                  </div>
+                </div>
+
+                <!-- End Time Selection -->
+                <div class="col-3">
+                  <div class="flex flex-column gap-2" style="margin-top: 27px">
+                    <p-dropdown
+                      #endTimeDropdown
+                      [options]="filteredEndTime"
+                      [(ngModel)]="selectedEndTime"
+                      optionLabel="name"
+                      placeholder="Select End Time"
+                      name="endTime"
+                      (onChange)="onEndTimeChange()"
+                    ></p-dropdown>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Days Checkboxes -->
+              <div class="col-6">
+                <div class="flex flex-column gap-2">
+                  <label>Select Days</label>
+                  <div class="flex flex-wrap">
+                    <div class="checkbox-group" *ngFor="let day of daysOfWeek">
+                      <label class="checkbox-label">
+                        <input
+                          type="checkbox"
+                          [(ngModel)]="day.selected"
+                          name="day-{{ day.name }}"
+                          class="custom-checkbox"
+                          (change)="onDayChange(day.name, $event)"
+                        />
+                        <span class="custom-checkbox-text">{{ day.name }}</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Form Buttons -->
+              <div class="flex align-items-center justify-content-end mt-4">
+                <p-button
+                  label="Cancel"
+                  class="bg-o-color mr"
+                  routerLink="/course"
+                  styleClass="p-button-outlined"
+                ></p-button>
+                <p-button
+                  type="submit"
+                  label="Add"
+                  class="bg-b-color ml"
+                ></p-button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Dialog -->
+<p-dialog
+  header="Add Category"
+  class="form-hook"
+  [(visible)]="visible"
+  [style]="{ width: '50vw' }"
+>
+  <h4 class="mb-4">Are you sure you want to add this Category?</h4>
+  <p-button (click)="onSubmit()" class="bg-b-color">
+    <i class="bi bi-check-circle" style="font-size: 20px; font-weight: bold"></i
+    >&nbsp;Confirm
+  </p-button>
+</p-dialog>

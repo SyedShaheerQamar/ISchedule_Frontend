@@ -1,0 +1,132 @@
+
+.card-section-i{
+    width:40%;
+}
+.card-section-c{
+    width:60%;
+}
+
+.card-section-i>.bi{
+   font-size:80px;
+   color:#ffffff;
+}
+
+ @media (max-width: 1246px) and (min-width: 1153px){ 
+   .card-section-i>.bi{
+    font-size:60px; /* Adjust for small screens */
+    }
+  }
+
+  @media (max-width: 1153px) and (min-width:991px) {
+    .card-section-i>.bi{
+        font-size:50px; /* Adjust for medium screens */
+    }
+  }
+  
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+.bg-w{
+   color: #ffffff;
+}
+
+.card {
+    margin-bottom: 20px;
+  }
+  
+  .event {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+// /* Center the container */
+// .container {
+//   max-width: 1000px;
+//   margin: 0 auto;
+// }
+
+// /* Room headers */
+// .room-header {
+//   font-size: 1.2rem;
+//   font-weight: bold;
+//   margin-bottom: 10px;
+//   text-align: center;
+// }
+
+// /* Time blocks inside each room */
+// .time-block {
+//   background-color: #007bff; /* Bootstrap primary color */
+//   color: white;
+//   border: 1px solid #fff;
+//   margin-bottom: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 4px;
+//   font-size: 0.9rem;
+//   font-weight: bold;
+// }
+
+// /* Room column styling */
+// .room-column {
+//   border: 1px solid #ccc;
+//   padding: 10px;
+//   min-height: 300px;
+//   background-color: #f8f9fa;
+//   margin-bottom: 15px;
+// }
+
+/* Container to hold room columns horizontally */
+.room-container {
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: space-between; /* Space between columns */
+  gap: 10px; /* Optional: Add space between columns */
+}
+
+/* Room column styling */
+.room-column {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f8f9fa;
+  min-height: 300px; /* Set minimum height for columns */
+  display: flex;
+  flex-direction: column; /* Ensure time blocks are stacked vertically */
+  flex-grow: 1; /* Make columns flexible and occupy equal space */
+}
+
+/* Room header styling */
+.room-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Time block styling */
+.time-block {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  flex-grow: 0; /* Prevent time blocks from stretching */
+}

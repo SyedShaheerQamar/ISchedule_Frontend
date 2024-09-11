@@ -1,0 +1,32 @@
+<nav class="main-menu">
+  <ul>
+    <li>
+      <span class="sidebar-list-hover" routerLink="/home">
+        <i class="bi bi-bar-chart-line-fill"></i>
+        <span class="nav-text"> Dashboard </span>
+      </span>
+    </li>
+    <li class="child">
+      <span class="sidebar-list-hover" routerLink="/course">
+        <i class="bi bi-people-fill"></i>
+        <span class="nav-text"> Courses </span>
+      </span>
+    </li>
+    <li class="child">
+      <span class="sidebar-list-hover" routerLink="/room">
+        <i class="bi bi-front"></i>
+        <span class="nav-text"> Rooms </span>
+      </span>
+    </li>
+    <li class="child">
+      <span
+        class="sidebar-list-hover"
+        routerLink="/pref"
+        *ngIf="hasPermission() || hasAssistantPermission()"
+      >
+        <i class="bi bi-files"></i>
+        <span class="nav-text"> Preferences </span>
+      </span>
+    </li>
+  </ul>
+</nav>
