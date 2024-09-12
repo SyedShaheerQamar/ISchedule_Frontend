@@ -13,7 +13,6 @@ import {FormsModule} from'@angular/forms'
 import {
   HttpClientModule
 } from '@angular/common/http';
-// import { provideRouter, withHashLocation } from '@angular/router';
 import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { PaginatorModule } from 'primeng/paginator';
@@ -43,6 +42,7 @@ import { RoomListComponent } from './page/room/room-list/room-list.component';
 import { DxSchedulerModule } from 'devextreme-angular';
 import { AddPrefComponent } from './page/courses/add-pref/add-pref.component';
 import { PrefListComponent } from './page/pref/pref-list/pref-list.component';
+import { StudentCoursesComponent } from './page/courses/student-courses/student-courses.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +57,7 @@ import { PrefListComponent } from './page/pref/pref-list/pref-list.component';
     RoomListComponent,
     AddPrefComponent,
     PrefListComponent,
+    StudentCoursesComponent,
   ],
   imports: [
     ChipsModule,

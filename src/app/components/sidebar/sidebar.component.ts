@@ -25,5 +25,8 @@ export class SidebarComponent implements OnInit {
   hasAssistantPermission():boolean{
     return this.authguardService.hasAssistantPermission()
   }
+  hasStudentPermission():boolean{
+    return this.authguardService.hasStudentPermission()
+  }
 
 }

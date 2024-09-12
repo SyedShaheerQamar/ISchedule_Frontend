@@ -19,6 +19,10 @@ export class CourseService {
     return this.http.get<Course[]>(this.url.concat("/course"))
   }
 
+  getAllCourseByStudent(email: any):Observable<Course[]>{
+    return this.http.post<Course[]>(this.url.concat("/course"), email)
+  }
+
   deleteCourseByID(id:number){
     return this.http.delete(this.url.concat('/course/',id.toString()));
   }

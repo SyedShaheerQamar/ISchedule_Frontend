@@ -9,6 +9,7 @@ import { AddCourseComponent } from './page/courses/add-course/add-course.compone
 import { RoomListComponent } from './page/room/room-list/room-list.component';
 import { AddPrefComponent } from './page/courses/add-pref/add-pref.component';
 import { PrefListComponent } from './page/pref/pref-list/pref-list.component';
+import { StudentCoursesComponent } from './page/courses/student-courses/student-courses.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'std-course',
+    component: StudentCoursesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',

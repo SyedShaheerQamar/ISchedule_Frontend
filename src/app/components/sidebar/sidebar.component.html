@@ -28,5 +28,15 @@
         <span class="nav-text"> Preferences </span>
       </span>
     </li>
+    <li class="child">
+      <span
+        class="sidebar-list-hover"
+        routerLink="/std-course"
+        *ngIf="hasStudentPermission()"
+      >
+        <i class="bi bi-files"></i>
+        <span class="nav-text"> Assigned Courses </span>
+      </span>
+    </li>
   </ul>
 </nav>
